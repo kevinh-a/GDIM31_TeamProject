@@ -40,11 +40,16 @@ public class PlayerController : MonoBehaviour
             //body.velocity = Vector2.left * speed;
         }
 
-        if(Input.GetKey(KeyCode.W) && isJumping == false)
+        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isJumping == false)
         {
-            //transform.position += new Vector3(0, boost * Time.deltaTime, 0);
             movement += new Vector3(0, boost, 0);
+            //transform.position += new Vector3(0, boost * Time.deltaTime, 0);
             //body.velocity = Vector2.up * speed;
+        }
+
+        if(Input.GetKey(KeyCode.KeypadEnter))
+        {
+            //do gun stuff
         }
     }
 
