@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
+    private int damage;
+
+    [SerializeField]
     private float enemy_MoveSpeed;
 
     // Start is called before the first frame update
@@ -20,10 +23,12 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    { 
         if(collision.gameObject.tag == "Player")
         {
             //lose a life or take damage, but just despawn for now
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            player.Take_Damage(damage);
             Destroy(gameObject);
         }
     }
