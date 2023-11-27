@@ -10,8 +10,8 @@ public class Menu : MonoBehaviour
     // This Menu Class will mostly consist of buttons for the main menu
     public void PlayButton()
     {
-        //Loads the nextindexed scene
-        //SceneManager.LoadScene();
+        //Loads in the first level (for now)
+        SceneManager.LoadScene("Level_1");
     }
 
     // Update is called once per frame
