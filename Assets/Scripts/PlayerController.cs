@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,14 +14,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boost;
 
+    [SerializeField]
+    private int starting_Health;
+
+    [SerializeField]
+    private int current_Health; //Seralized just to be viewed in the editor
+
     private Vector3 movement;
-    private bool isJumping;
+    private bool grounded;
 
     // Start is called before the first frame update
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        isJumping = false;
+        current_Health = starting_Health;
+        grounded = true;
     }
 
     // Update is called once per frame
@@ -40,33 +48,56 @@ public class PlayerController : MonoBehaviour
             //body.velocity = Vector2.left * speed;
         }
 
-        if(Input.GetKey(KeyCode.W) && isJumping == false)
+        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true)
         {
-            //transform.position += new Vector3(0, boost * Time.deltaTime, 0);
             movement += new Vector3(0, boost, 0);
+            //transform.position += new Vector3(0, boost * Time.deltaTime, 0);
             //body.velocity = Vector2.up * speed;
+        }
+
+        if(Input.GetKey(KeyCode.KeypadEnter))
+        {
+            //do gun stuff
         }
     }
 
     private void FixedUpdate()
     {
-        body.AddForce(movement);
+        body.AddForce(movement, ForceMode2D.Force);
         movement = Vector3.zero;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Platform")
         {
-            isJumping = false;
+            grounded = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Platform")
         {
-            isJumping = true;
+            grounded = false;   
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(Input.GetKey(KeyCode.Space))
+        {
+            body.AddForce(new Vector2(0, boost));
+        }
+    }
+
+    public void Take_Damage(int damage)
+    {
+        current_Health -= damage;
+
+        if(current_Health <= 0)
+        {
+            //reset level
         }
     }
 }
