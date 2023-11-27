@@ -18394,18 +18394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  speed: 1
-  boost: 10
-=======
   speed: 25
   boost: 50
->>>>>>> Stashed changes
-=======
-  speed: 3
-  boost: 5
->>>>>>> a6bdffbe58ef98815ee0df9a96ad031f74c90087
 --- !u!1 &1823815993
 GameObject:
   m_ObjectHideFlags: 0
