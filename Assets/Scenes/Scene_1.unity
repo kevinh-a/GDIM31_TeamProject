@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 483190722}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18394,6 +18394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   speed: 1
   boost: 10
@@ -18401,6 +18402,10 @@ MonoBehaviour:
   speed: 25
   boost: 50
 >>>>>>> Stashed changes
+=======
+  speed: 3
+  boost: 5
+>>>>>>> a6bdffbe58ef98815ee0df9a96ad031f74c90087
 --- !u!1 &1823815993
 GameObject:
   m_ObjectHideFlags: 0
@@ -22715,7 +22720,7 @@ GameObject:
   - component: {fileID: 1951436474}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Platform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
