@@ -14,12 +14,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float boost;
 
-    [SerializeField]
-    private int starting_Health;
-
-    [SerializeField]
-    private int current_Health; //Serialized just to be viewed in the editor
-
     private Vector3 movement;
     private bool grounded;
 
@@ -27,7 +21,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        current_Health = starting_Health;
         grounded = true;
     }
 
@@ -88,16 +81,6 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             body.AddForce(new Vector2(0, boost));
-        }
-    }
-
-    public void Take_Damage(int damage)
-    {
-        current_Health -= damage;
-
-        if(current_Health <= 0)
-        {
-            //reset level?
         }
     }
 }

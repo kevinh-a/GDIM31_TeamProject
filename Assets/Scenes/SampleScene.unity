@@ -301,7 +301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 756265512}
   speed: 1
-  boost: 10
+  boost: 15
+  starting_Health: 15
+  current_Health: 0
 --- !u!61 &756265511
 BoxCollider2D:
   m_ObjectHideFlags: 0
