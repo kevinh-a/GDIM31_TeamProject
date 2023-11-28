@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int current_Health; //Seralized just to be viewed in the editor
 
-    private Vector3 movement;
+    private float horizontal;
     private bool grounded;
 
     // Start is called before the first frame update
@@ -34,37 +34,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetKey(KeyCode.D))
+        horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true)
         {
-            movement += new Vector3(speed, 0, 0);
-            //transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
-            //body.velocity = Vector2.right * speed;
+            body.velocity = new Vector2(body.velocity.x, boost);
         }
 
-        if(Input.GetKey(KeyCode.A))
-        {
-            movement += new Vector3(-speed, 0, 0);
-            //transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
-            //body.velocity = Vector2.left * speed;
-        }
-
-        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true)
-        {
-            movement += new Vector3(0, boost, 0);
-            //transform.position += new Vector3(0, boost * Time.deltaTime, 0);
-            //body.velocity = Vector2.up * speed;
-        }
-
-        if(Input.GetKey(KeyCode.KeypadEnter))
-        {
-            //do gun stuff
-        }
     }
 
     private void FixedUpdate()
     {
-        body.AddForce(movement, ForceMode2D.Force);
-        movement = Vector3.zero;
+        body.velocity = new Vector2(horizontal * speed, body.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
