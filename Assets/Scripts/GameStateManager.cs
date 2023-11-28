@@ -7,6 +7,7 @@ using System;
 public class GameStateManager : MonoBehaviour
 {
     public static Action OnGameOver;
+    private int lives; //How many lives the player has
 
     private static GameStateManager _instance;
 
@@ -26,12 +27,29 @@ public class GameStateManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        lives = 3;
     }
 
-    // Update is called once per frame
+    //returns the amount of lives the player has
+    public int GetLives()
+    {
+        return lives;
+    }
+
+    public void LoseALife()
+    {
+        lives--;
+        if(lives == 0)
+        {
+            GameOver();
+        }
+    }
+
+    // Calls the gameover screen and freezes the moving assets in a scene
     public static void GameOver()
     {
         Time.timeScale = 0f;
         OnGameOver();
     }
+
 }
