@@ -38,7 +38,7 @@ public class GameStateManager : MonoBehaviour
         return lives;
     }
 
-    public void LoseALife()
+    public static void LoseALife()
     {
         lives--;
         if(lives <= 0)
