@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
+ 
     void Awake()
     {
         //subscribes the action in GameStateManager to GameOver
@@ -13,7 +13,6 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
     public void OnDestroy()
     {
         GameStateManager.OnGameOver -= Open;
@@ -26,13 +25,17 @@ public class GameOver : MonoBehaviour
 
     public void Restart()
     {
+        //Turns off the canvas (Game over screen)
         gameObject.SetActive(false);
+        //Calls GameStateManager's Restart function
         GameStateManager.Restart();
     }
 
     public static void BackToMenu()
     {
+        //Sets the timescale back to normal
         Time.timeScale = 1f;
+        //Loads the main menu scene
         SceneManager.LoadScene("MainestMenu");
     }
 }
