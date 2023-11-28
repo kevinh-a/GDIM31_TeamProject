@@ -8,14 +8,14 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> enemyPrefabs;
 
     [SerializeField]
-    private float spawnTime;
+    private float spawnTime; //time per spawn
 
-    private float timer;
+    private float timer; //internal timer
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Instantiate(enemyPrefabs[0], transform);
+        GameObject.Instantiate(enemyPrefabs[0], transform); //spawn common enemy first frame
     }
 
     // Update is called once per frame
@@ -29,12 +29,12 @@ public class EnemySpawner : MonoBehaviour
         {
             if (Random.Range(0, 10) < 9)
             {
-                GameObject.Instantiate(enemyPrefabs[0], transform);
+                GameObject.Instantiate(enemyPrefabs[0], transform); //spawn common enemy
                 timer = 0; //reset our timer
             }
             else
             {
-                GameObject.Instantiate(enemyPrefabs[1], transform);
+                GameObject.Instantiate(enemyPrefabs[1], transform); //rare spawn elite/boss
                 timer = 0; //reset our timer
             }
         }

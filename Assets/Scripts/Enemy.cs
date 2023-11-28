@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private int damage;
 
     [SerializeField]
-    private float enemy_MoveSpeed;
+    private float enemy_MoveSpeed; 
 
     // Start is called before the first frame update
     void Start()
@@ -19,16 +19,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-enemy_MoveSpeed * Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(-enemy_MoveSpeed * Time.deltaTime, 0f, 0f); //make enemies move left, towards the player
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            //lose a life or take damage, but just despawn for now
+            //if collides with a player, take damage, but just despawn for now
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             player.Take_Damage(damage);
+
             Destroy(gameObject);
         }
     }

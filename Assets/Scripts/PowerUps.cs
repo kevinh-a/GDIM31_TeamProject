@@ -23,6 +23,6 @@ public class PowerUps : MonoBehaviour
         { 
             //apply powerup
         }
-        Destroy(gameObject);
+        Destroy(gameObject); //disappear after picked up
     }
 }

@@ -9,13 +9,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
 
     [SerializeField]
-    private float speed;
+    private float speed; 
 
     [SerializeField]
-    private float boost;
+    private float boost; 
 
     [SerializeField]
-    private int starting_Health;
+    private int starting_Health; //determine starting health
 
     [SerializeField]
     private int current_Health; //Seralized just to be viewed in the editor
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
 
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true) //allows jump if player is on ground
         {
             body.velocity = new Vector2(body.velocity.x, boost);
         }
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         body.velocity = new Vector2(horizontal * speed, body.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) //checking if player is on the ground
     {
         if(collision.gameObject.tag == "Platform")
         {
@@ -66,19 +66,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            body.AddForce(new Vector2(0, boost));
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) 
     {
         if(collision.gameObject.tag == "Out of Bounds")
         {
-            GameStateManager.LoseALife();
+            GameStateManager.LoseALife(); //lose a life, reset level
         }
     }
 
@@ -88,8 +80,7 @@ public class PlayerController : MonoBehaviour
 
         if(current_Health <= 0)
         {
-            //reset level
-            GameStateManager.LoseALife();
+            GameStateManager.LoseALife(); //lose a life, reset level
         }
     }
 }
