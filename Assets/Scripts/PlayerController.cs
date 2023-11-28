@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //Smoother player movement, credit to https://www.youtube.com/watch?v=K1xZ-rycYY8
+
         horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
 
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true)
