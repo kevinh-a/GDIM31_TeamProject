@@ -42,11 +42,14 @@ public class GameStateManager : MonoBehaviour
     public static void LoseALife()
     {
         lives--;
-        Restart();
 
         if(lives <= 0)
         {
             GameOver();
+        }
+        else
+        {
+            Restart();
         }
     }
 
