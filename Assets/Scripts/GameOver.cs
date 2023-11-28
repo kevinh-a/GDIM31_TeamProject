@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,24 @@ public class GameOver : MonoBehaviour
     }
 
     // Update is called once per frame
+=======
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameOver : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Awake()
+    {
+        //subscribes the action in GameStateManager to GameOver
+        GameStateManager.OnGameOver += Open;
+        gameObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+>>>>>>> Stashed changes
     public void OnDestroy()
     {
         GameStateManager.OnGameOver -= Open;
@@ -34,4 +53,8 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene("MainestMenu");
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
