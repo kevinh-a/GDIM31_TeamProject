@@ -54,4 +54,9 @@ public class GameStateManager : MonoBehaviour
         OnGameOver();
     }
 
+    public static void Restart()
+    {
+        SceneManager.LoadScene("Level_1");
+        Time.timeScale = 1f;
+    }
 }
