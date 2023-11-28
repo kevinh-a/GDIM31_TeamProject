@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
         if(current_Health <= 0)
         {
             //reset level
+            GameStateManager.LoseALife();
         }
     }
 }
