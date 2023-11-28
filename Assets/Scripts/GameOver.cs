@@ -32,6 +32,7 @@ public class GameOver : MonoBehaviour
 
     public static void BackToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainestMenu");
     }
 }

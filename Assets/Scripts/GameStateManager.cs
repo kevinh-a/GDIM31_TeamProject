@@ -9,7 +9,9 @@ public class GameStateManager : MonoBehaviour
     public static Action OnGameOver;
 
     [SerializeField]
-    private static int lives; //How many lives the player has
+    private int starting_Lives; //How many lives the player has
+
+    private static int current_Lives;
 
     private static GameStateManager _instance;
 
@@ -17,33 +19,32 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         //Setup for Singleton
-        if(_instance == null)
+        if (_instance == null)
         {
             _instance = this;
             DontDestroyOnLoad(_instance);
         }
         else
         {
-            if(_instance != this)
+            if (_instance != this)
             {
                 Destroy(gameObject);
             }
         }
 
-        lives = 3;
+        current_Lives = starting_Lives;
     }
-
     //returns the amount of lives the player has
     public int GetLives()
     {
-        return lives;
+        return current_Lives;
     }
 
     public static void LoseALife()
     {
-        lives--;
+        current_Lives--;
 
-        if(lives <= 0)
+        if(current_Lives <= 0)
         {
             GameOver();
         }
