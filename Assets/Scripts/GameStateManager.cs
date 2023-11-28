@@ -9,7 +9,7 @@ public class GameStateManager : MonoBehaviour
     public static Action OnGameOver;
 
     [SerializeField]
-    private int lives; //How many lives the player has
+    private static int lives; //How many lives the player has
 
     private static GameStateManager _instance;
 
@@ -29,6 +29,7 @@ public class GameStateManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
         lives = 3;
     }
 
@@ -41,6 +42,7 @@ public class GameStateManager : MonoBehaviour
     public static void LoseALife()
     {
         lives--;
+
         if(lives <= 0)
         {
             GameOver();
