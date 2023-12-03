@@ -83,4 +83,9 @@ public class PlayerController : MonoBehaviour
             GameStateManager.LoseALife(); //lose a life, reset level
         }
     }
+
+    public void AddHealth(int health)
+    {
+        current_Health += health;
+    }
 }
