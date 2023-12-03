@@ -74,6 +74,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void AugmentSpeed(float spBoost)
+    {
+        speed += spBoost;
+    }
+
+    public void AugmentJump(float jmBoost)
+    {
+        boost += jmBoost;
+    }
+
     public void Take_Damage(int damage)
     {
         current_Health -= damage;
