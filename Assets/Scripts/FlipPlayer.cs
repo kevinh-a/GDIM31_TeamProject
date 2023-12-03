@@ -10,7 +10,12 @@ public class FlipPlayer : MonoBehaviour
         if (Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             transform.Rotate(0, 180, 0);
-        } 
+        }
+
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+        {
+            transform.Rotate(0, 180, 0);
+        }
 
     }
 }
