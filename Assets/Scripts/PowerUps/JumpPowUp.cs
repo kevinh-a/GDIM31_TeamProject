@@ -13,6 +13,9 @@ public class JumpPowUp : PowerUpBase
     private float duration;
 
     private float startTime;
+
+    //This variable causes a lot of null references (until it's grabbed), but this happens
+    //In Salmon's video as well, so I assume it's intentional
     private PlayerController playerCon;
 
     public override void Apply(PlayerController player)
