@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private float horizontal;
     private bool grounded;
+    private bool flipped;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,14 +30,33 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         current_Health = starting_Health;
         grounded = true;
+        flipped = false;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //Smoother player movement, credit to https://www.youtube.com/watch?v=K1xZ-rycYY8
+        //Smoother player movement with Input.GetAxisRaw, credit to https://www.youtube.com/watch?v=K1xZ-rycYY8
 
         horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (flipped == false)
+            {
+                transform.Rotate(0, 180, 0);
+                flipped = true;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            if (flipped == true)
+            {
+                transform.Rotate(0, 180, 0);
+                flipped = false;
+            }
+        }
 
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true) //allows jump if player is on ground
         {
