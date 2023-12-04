@@ -35,7 +35,7 @@ public class GameStateManager : MonoBehaviour
         current_Lives = starting_Lives;
     }
     //returns the amount of lives the player has
-    public int GetLives()
+    public static int GetLives()
     {
         return current_Lives;
     }
