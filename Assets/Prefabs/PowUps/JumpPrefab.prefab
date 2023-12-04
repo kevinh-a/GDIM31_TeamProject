@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8092851582407625899
+--- !u!1 &3201556630907378570
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7708334293756004344}
-  - component: {fileID: 1272165147336019453}
-  - component: {fileID: 3516860530212667874}
+  - component: {fileID: 5044599087543557908}
+  - component: {fileID: 6507342301171966480}
+  - component: {fileID: 2544370752440984437}
   m_Layer: 0
-  m_Name: HealthPrefab
+  m_Name: JumpPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7708334293756004344
+--- !u!4 &5044599087543557908
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8092851582407625899}
+  m_GameObject: {fileID: 3201556630907378570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 602.8, y: 370.19174, z: 0}
+  m_LocalPosition: {x: 628.1684, y: 372.82138, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1272165147336019453
+--- !u!212 &6507342301171966480
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8092851582407625899}
+  m_GameObject: {fileID: 3201556630907378570}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,17 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3516860530212667874
+--- !u!114 &2544370752440984437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8092851582407625899}
+  m_GameObject: {fileID: 3201556630907378570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f74cc155d6b4d379cd4d127e4f92bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d88f180fc58b466bbb18ca806a1bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowUpPrefab: {fileID: 4541712478984992236, guid: 1b3d56f567e43415b813022f00efcfaa, type: 3}
-  healthAdd: 2
+  PowUpPrefab: {fileID: 3173877348805618784, guid: b77ec27f11c3e49a68b69a2dffd43484, type: 3}
+  jumpBoost: 50
+  duration: 10
