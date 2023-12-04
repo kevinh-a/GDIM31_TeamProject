@@ -116,6 +116,13 @@ public class PlayerController : MonoBehaviour
 
     public void AddHealth(int health)
     {
-        current_Health += health;
+        if (current_Health + health > starting_Health)
+        {
+            current_Health = starting_Health;
+        }
+        else
+        {
+            current_Health += health;
+        }
     }
 }
