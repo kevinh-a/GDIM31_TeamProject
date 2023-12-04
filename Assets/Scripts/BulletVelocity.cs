@@ -9,6 +9,8 @@ public class BulletVelocity : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField]
     private GameObject bulletParticles;
+    public GameObject bulletPrefab;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,8 +25,10 @@ public class BulletVelocity : MonoBehaviour
         {
             enemy.TakeDamage(20);
         }
-        Instantiate(bulletParticles,transform.position, transform.rotation);
+        Instantiate(bulletParticles, transform.position, transform.rotation);
         Destroy(gameObject);
+
     }
 }
+
  
