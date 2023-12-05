@@ -92,6 +92,11 @@ public class PlayerController : MonoBehaviour
         {
             GameStateManager.LoseALife(); //lose a life, reset level
         }
+
+        if(collision.gameObject.tag == "Finish")
+        {
+            //go next level
+        }
     }
 
     public void AugmentSpeed(float spBoost)
