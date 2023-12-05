@@ -13,6 +13,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private Image[] heartsSprites;
 
+    private PlayerController playCon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,16 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateHealth()
     {
-        
+        for(int i = 0; i < heartsSprites.Length; i++)
+        {
+            if( i < playCon.GetCurrentHealth())
+            {
+                heartsSprites[i].color = Color.red;
+            }
+            else
+            {
+                heartsSprites[i].color = Color.black;
+            }
+        }
     }
 }

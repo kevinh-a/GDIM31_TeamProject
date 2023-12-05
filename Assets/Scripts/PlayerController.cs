@@ -114,6 +114,11 @@ public class PlayerController : MonoBehaviour
         return starting_Health;
     }
 
+    public int GetCurrentHealth()
+    {
+        return current_Health;
+    }
+
     public void Take_Damage(int damage)
     {
         current_Health -= damage;
