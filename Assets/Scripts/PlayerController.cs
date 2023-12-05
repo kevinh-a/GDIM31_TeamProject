@@ -109,6 +109,11 @@ public class PlayerController : MonoBehaviour
         boost += jmBoost;
     }
 
+    public int GetStartingHealth()
+    {
+        return starting_Health;
+    }
+
     public void Take_Damage(int damage)
     {
         current_Health -= damage;
