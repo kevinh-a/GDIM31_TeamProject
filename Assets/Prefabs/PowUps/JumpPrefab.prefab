@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PowUpPrefab: {fileID: 3173877348805618784, guid: b77ec27f11c3e49a68b69a2dffd43484, type: 3}
-  jumpBoost: 50
+  jumpBoost: 8
   duration: 10

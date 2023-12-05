@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int current_Health; //Seralized just to be viewed in the editor
 
-    //private HealthBar hp;
+    [SerializeField]
+    private HealthBar hp;
 
     private float horizontal;
     private bool grounded;
@@ -129,6 +130,7 @@ public class PlayerController : MonoBehaviour
         {
             GameStateManager.LoseALife(); //lose a life, reset level
         }
+        hp.UpdateHealth();
     }
 
     public void AddHealth(int health)
@@ -141,5 +143,6 @@ public class PlayerController : MonoBehaviour
         {
             current_Health += health;
         }
+        hp.UpdateHealth();
     }
 }

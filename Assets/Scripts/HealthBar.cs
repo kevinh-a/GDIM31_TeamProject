@@ -12,27 +12,20 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private Image[] heartsSprites;
 
+    [SerializeField]
     private PlayerController playCon;
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateHealth();
-        //CreateHearts(playCon.GetStartingHealth());
     }
-    /*
-    private void CreateHearts(int numOfHearts)
-    {
-        for (int i = 0; i < numOfHearts; i++)
-        {
-            //Instantiate(heartsSprites, transform);
-        }
-    }*/
 
     // Update is called once per frame
     void Update()
     {
         livesCounter.text = "Lives: " + GameStateManager.GetLives();
+        UpdateHealth();
     }
 
     //Classes with methods that hurt the player call this

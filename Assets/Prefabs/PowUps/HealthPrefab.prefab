@@ -98,4 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PowUpPrefab: {fileID: 4541712478984992236, guid: 1b3d56f567e43415b813022f00efcfaa, type: 3}
-  healthAdd: 2
+  healthAdd: 1
