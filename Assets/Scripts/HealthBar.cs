@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private int lives;
 
     [SerializeField]
     private Text livesCounter;
@@ -18,8 +17,6 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lives = GameStateManager.GetLives();
-        UpdateLives();
         UpdateHealth();
         //CreateHearts(playCon.GetStartingHealth());
     }
@@ -35,14 +32,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        livesCounter.text = "Lives: " + lives;
-    }
-
-    //Classes with methods that causes players to lose lives call this
-    public void UpdateLives()
-    {
-        //Called in different classes whenever a life is updated
-        lives = GameStateManager.GetLives();
+        livesCounter.text = "Lives: " + GameStateManager.GetLives();
     }
 
     //Classes with methods that hurt the player call this
