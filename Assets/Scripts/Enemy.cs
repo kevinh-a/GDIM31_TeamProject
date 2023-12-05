@@ -14,10 +14,15 @@ public class Enemy : MonoBehaviour
     private float enemy_MoveSpeed;
 
     [SerializeField]
+    private float despawnTimer;
+
+    [SerializeField]
     private GameObject deathParticles;
 
     private Rigidbody2D rb;
     private bool flipped;
+
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +34,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        if(timer >= despawnTimer)
+        {
+            Destroy(gameObject);
+        }
+
         if(flipped == false)
         {
             moveLeft();
@@ -78,7 +89,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            //Instantiate(deathParticles, transform.position, transform.rotation);
+            Instantiate(deathParticles, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
