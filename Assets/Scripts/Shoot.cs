@@ -9,12 +9,7 @@ public class Shoot : MonoBehaviour
     public GameObject bulletPrefab;
     void Update()
     {
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
-        {
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-        }
-
-        if (Keyboard.current.qKey.wasPressedThisFrame)
+        if (Keyboard.current.enterKey.wasPressedThisFrame || (Keyboard.current.qKey.wasPressedThisFrame)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }
