@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class BulletVelocity : MonoBehaviour
 {
-    public float speed;
+    [SerializeField]
+    private float speed;
+
+    [SerializeField]
+    private int bullet_Damage;
+
     private Rigidbody2D rb;
+
     [SerializeField]
     private GameObject bulletParticles;
     public GameObject bulletPrefab;
@@ -19,13 +25,13 @@ public class BulletVelocity : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Benemy enemy = collision.GetComponent<Benemy>();
+        Enemy enemy = collision.GetComponent<Enemy>();
 
         if (enemy != null)
         {
-            enemy.TakeDamage(20);
+            enemy.TakeDamage(bullet_Damage);
         }
-        Instantiate(bulletParticles, transform.position, transform.rotation);
+        //Instantiate(bulletParticles, transform.position, transform.rotation);
         Destroy(gameObject);
 
     }
