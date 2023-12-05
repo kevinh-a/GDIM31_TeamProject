@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int current_Health; //Seralized just to be viewed in the editor
 
+    //private HealthBar hp;
+
     private float horizontal;
     private bool grounded;
     private bool flipped;

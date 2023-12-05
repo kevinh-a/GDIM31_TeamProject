@@ -19,16 +19,18 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         lives = GameStateManager.GetLives();
-        CreateHearts(3);
+        UpdateLives();
+        UpdateHealth();
+        //CreateHearts(playCon.GetStartingHealth());
     }
-
+    /*
     private void CreateHearts(int numOfHearts)
     {
         for (int i = 0; i < numOfHearts; i++)
         {
             //Instantiate(heartsSprites, transform);
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -36,12 +38,14 @@ public class HealthBar : MonoBehaviour
         livesCounter.text = "Lives: " + lives;
     }
 
+    //Classes with methods that causes players to lose lives call this
     public void UpdateLives()
     {
         //Called in different classes whenever a life is updated
         lives = GameStateManager.GetLives();
     }
 
+    //Classes with methods that hurt the player call this
     public void UpdateHealth()
     {
         for(int i = 0; i < heartsSprites.Length; i++)
