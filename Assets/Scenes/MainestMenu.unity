@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -650, y: -181}
-  m_SizeDelta: {x: 160, y: 50.051}
+  m_SizeDelta: {x: 264.18, y: 50.051}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77022315
 MonoBehaviour:
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: New Game
 --- !u!222 &169590015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: Continue
 --- !u!222 &514034515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 873530845}
   - component: {fileID: 873530844}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: NewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +572,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -650, y: 4.975}
-  m_SizeDelta: {x: 160, y: 50.051}
+  m_SizeDelta: {x: 264.179, y: 50.051}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873530844
 MonoBehaviour:
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 1318477732}
   - component: {fileID: 1318477731}
   m_Layer: 5
-  m_Name: OptionsButton
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,7 +859,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -650, y: -88}
-  m_SizeDelta: {x: 160, y: 50.051}
+  m_SizeDelta: {x: 264.18, y: 50.051}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318477731
 MonoBehaviour:
