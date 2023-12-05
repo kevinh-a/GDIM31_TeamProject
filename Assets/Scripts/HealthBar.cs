@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour
         UpdateHealth();
     }
 
-    //Classes with methods that hurt the player call this
+    //Updates the hp bar
     public void UpdateHealth()
     {
         for(int i = 0; i < heartsSprites.Length; i++)
