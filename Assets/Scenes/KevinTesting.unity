@@ -715,6 +715,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesCounter: {fileID: 1218107586}
+  heartsSprites:
+  - {fileID: 335571355}
+  - {fileID: 2088159692}
+  - {fileID: 1845024615}
 --- !u!114 &1184223598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,7 +1207,7 @@ MonoBehaviour:
   body: {fileID: 1888985357}
   speed: 7
   boost: 10
-  starting_Health: 15
+  starting_Health: 2
   current_Health: 0
 --- !u!50 &1888985357
 Rigidbody2D:
