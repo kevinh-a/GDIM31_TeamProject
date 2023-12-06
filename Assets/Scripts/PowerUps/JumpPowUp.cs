@@ -16,6 +16,7 @@ public class JumpPowUp : PowerUpBase
 
     //This variable causes a lot of null references (until it's grabbed), but this happens
     //In Salmon's video as well, so I assume it's intentional
+    [SerializeField]
     private PlayerController playerCon;
 
     public override void Apply(PlayerController player)
