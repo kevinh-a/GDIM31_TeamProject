@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private HealthBar hp;
 
-    [SerializeField]
-    private Animator animator;
+    //[SerializeField]
+    //private Animator animator;
 
     private float horizontal;
     private bool grounded;
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         body.velocity = new Vector2(horizontal * speed, body.velocity.y);
 
-        animator.SetFloat("Is_Walking", Mathf.Abs(horizontal));
+        //animator.SetFloat("Is_Walking", Mathf.Abs(horizontal));
 
     }
 
