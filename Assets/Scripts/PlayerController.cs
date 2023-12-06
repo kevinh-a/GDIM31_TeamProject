@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private HealthBar hp;
 
+    [SerializeField]
+    private Animator animator;
+
     private float horizontal;
     private bool grounded;
     private bool flipped;
@@ -72,6 +75,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, body.velocity.y);
+
+        animator.SetFloat("Is_Walking", Mathf.Abs(horizontal));
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision) //checking if player is on the ground
@@ -146,4 +152,5 @@ public class PlayerController : MonoBehaviour
         }
         hp.UpdateHealth();
     }
+
 }
