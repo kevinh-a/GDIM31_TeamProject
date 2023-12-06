@@ -11,9 +11,6 @@ public abstract class EnemyBase : MonoBehaviour
     protected int health;
 
     [SerializeField]
-    protected float enemy_MoveSpeed;
-
-    [SerializeField]
     protected float despawnTimer;
 
     [SerializeField]
@@ -43,16 +40,22 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void moveLeft()
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
-        transform.position += new Vector3(-enemy_MoveSpeed * Time.deltaTime, 0f, 0f); //make enemies move left
-    }
+        if (collision.gameObject.tag == "Platform")
+        {
+            transform.Rotate(0, 180, 0);
+            flipped = !flipped;
+        }
 
-    protected void moveRight()
-    {
-        transform.position += new Vector3(enemy_MoveSpeed * Time.deltaTime, 0f, 0f); //make enemies move right
+        if (collision.gameObject.tag == "Player")
+        {
+            //if collides with a player, take damage, but just despawn for now
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            Destroy(gameObject);
+            player.Take_Damage(damage);
+        }
     }
-
     public void TakeDamage(int damage)
     {
         health -= damage;
