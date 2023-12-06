@@ -14,6 +14,15 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private int starting_Lives; //How many lives the player has
 
+    [SerializeField]
+    private AudioClip lossOfLife;
+    [SerializeField]
+    private AudioClip deathSound;
+    [SerializeField]
+    private AudioClip gameMusic;
+    [SerializeField]
+    private AudioClip menuMusic;
+
     private static int current_Lives;
 
     private static GameStateManager _instance;
@@ -29,6 +38,7 @@ public class GameStateManager : MonoBehaviour
     private static GameState current_State;
     void Awake()
     {
+
         //Setup for Singleton
         if (_instance == null)
         {
@@ -43,6 +53,8 @@ public class GameStateManager : MonoBehaviour
             }
         }
 
+        //Plays the menu music
+        AudioManager.PlayMusic(menuMusic);
         current_Lives = _instance.starting_Lives;
     }
 
@@ -54,6 +66,8 @@ public class GameStateManager : MonoBehaviour
         {
             SceneManager.LoadScene(_instance.Levels[0]);
         }
+        //Plays the game's music
+        AudioManager.PlayMusic(_instance.gameMusic);
     }
 
     // Calls the gameover screen and freezes the moving assets in a scene
@@ -76,10 +90,12 @@ public class GameStateManager : MonoBehaviour
 
         if(current_Lives <= 0)
         {
+            AudioManager.PlaySFX(_instance.deathSound);
             GameOver();
         }
         else
         {
+            AudioManager.PlaySFX(_instance.lossOfLife);
             Restart();
         }
     }
@@ -87,7 +103,7 @@ public class GameStateManager : MonoBehaviour
     public static void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //SceneManager.LoadScene("Level_1");
         Time.timeScale = 1f;
+        AudioManager.PlayMusic(_instance.gameMusic);
     }
 }
