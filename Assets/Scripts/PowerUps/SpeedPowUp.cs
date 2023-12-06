@@ -14,6 +14,7 @@ public class SpeedPowUp : PowerUpBase
 
     private float startTime;
 
+    [SerializeField]
     private PlayerController playerCon;
 
     public override void Apply(PlayerController player)
