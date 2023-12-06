@@ -9,14 +9,25 @@ public class GameStateManager : MonoBehaviour
     public static Action OnGameOver;
 
     [SerializeField]
+    private List<string> Levels = new List<string>();
+
+    [SerializeField]
     private int starting_Lives; //How many lives the player has
 
     private static int current_Lives;
 
     private static GameStateManager _instance;
 
+    enum GameState
+    {
+        Menu,
+        Playing,
+        Paused,
+        GameOver
+    }
 
-    void Start()
+    private static GameState current_State;
+    void Awake()
     {
         //Setup for Singleton
         if (_instance == null)
@@ -32,8 +43,27 @@ public class GameStateManager : MonoBehaviour
             }
         }
 
-        current_Lives = starting_Lives;
+        current_Lives = _instance.starting_Lives;
     }
+
+    public static void NewGame()
+    {
+        current_State = GameState.Playing;
+        current_Lives = _instance.starting_Lives;
+        if(_instance.Levels.Count > 0)
+        {
+            SceneManager.LoadScene(_instance.Levels[0]);
+        }
+    }
+
+    // Calls the gameover screen and freezes the moving assets in a scene
+    public static void GameOver()
+    {
+        current_State = GameState.GameOver;
+        Time.timeScale = 0f;
+        OnGameOver();
+    }
+
     //returns the amount of lives the player has
     public static int GetLives()
     {
@@ -54,16 +84,10 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    // Calls the gameover screen and freezes the moving assets in a scene
-    public static void GameOver()
-    {
-        Time.timeScale = 0f;
-        OnGameOver();
-    }
-
     public static void Restart()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene("Level_1");
         Time.timeScale = 1f;
     }
 }
