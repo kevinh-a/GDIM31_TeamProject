@@ -29,6 +29,7 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(false);
         //Calls GameStateManager's Restart function
         GameStateManager.Restart();
+        GameStateManager.SetLives(3);
     }
 
     public static void BackToMenu()
