@@ -13,7 +13,7 @@ public class BulletVelocity : MonoBehaviour
 
     [SerializeField]
     private AudioClip bullet_sound;
-
+     
     private Rigidbody2D rb;
 
     [SerializeField]
