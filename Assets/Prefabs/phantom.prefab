@@ -95,6 +95,7 @@ MonoBehaviour:
   health: 20
   despawnTimer: 30
   deathParticles: {fileID: 7703859389372657568, guid: 37c2b25417b30bc47a38563f9d28ad19, type: 3}
+  deathSound: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
   moveRate: 3
   minX: -12
   maxX: 12
