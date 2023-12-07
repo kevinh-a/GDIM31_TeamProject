@@ -8,6 +8,7 @@ TagManager:
   - GameOver
   - Out of Bounds
   - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

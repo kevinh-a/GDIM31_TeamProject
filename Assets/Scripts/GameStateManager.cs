@@ -100,6 +100,11 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public static void SetLives(int lives)
+    {
+        current_Lives = lives;
+    }
+
     public static void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
