@@ -14,6 +14,9 @@ public class JumpPowUp : PowerUpBase
 
     private float startTime;
 
+    //Needed in order to prevent nullreferences...
+    private bool pickedUp = false;
+
     //This variable causes a lot of null references (until it's grabbed), but this happens
     //In Salmon's video as well, so I assume it's intentional
     [SerializeField]
@@ -25,15 +28,20 @@ public class JumpPowUp : PowerUpBase
         startTime = Time.time;
         playerCon = player;
         playerCon.AugmentJump(jumpBoost);
+        pickedUp = true;
     }
 
     private void Update()
     {
         //If the duration has been exceeded in time, end the effects
-        if(Time.time - startTime > duration)
+        if(pickedUp == true)
         {
-            playerCon.AugmentJump(-jumpBoost);
-            Destroy(gameObject);
+            if (Time.time - startTime > duration)
+            {
+                playerCon.AugmentJump(-jumpBoost);
+                Destroy(gameObject);
+                pickedUp = false;
+            }
         }
     }
 }

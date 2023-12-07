@@ -14,6 +14,9 @@ public class SpeedPowUp : PowerUpBase
 
     private float startTime;
 
+    //Needed to prevent nullreferences
+    private bool pickedUp = false;
+
     [SerializeField]
     private PlayerController playerCon;
 
@@ -23,15 +26,20 @@ public class SpeedPowUp : PowerUpBase
         startTime = Time.time;
         playerCon = player;
         playerCon.AugmentSpeed(speedBoost);
+        pickedUp = true;
     }
 
     private void Update()
     {
-        //If the duration has been exceeded in time, end the effects of the speed boost
-        if (Time.time - startTime > duration)
+        if(pickedUp == true)
         {
-            playerCon.AugmentSpeed(-speedBoost);
-            Destroy(gameObject);
+            //If the duration has been exceeded in time, end the effects of the speed boost
+            if (Time.time - startTime > duration)
+            {
+                playerCon.AugmentSpeed(-speedBoost);
+                Destroy(gameObject);
+                pickedUp = false;
+            }
         }
     }
 }
