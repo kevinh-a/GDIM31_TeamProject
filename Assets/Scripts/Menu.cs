@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     {
         //Loads in the first level (for now)
         SceneManager.LoadScene("Level_1");
+        GameStateManager.SetLives(3);
     }
 
     // Update is called once per frame
