@@ -80,24 +80,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //checking if player is on the ground
-    {
-        if(collision.gameObject.tag == "Platform")
-        {
-            grounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.gameObject.tag == "Platform")
         {
-            grounded = false;   
+            grounded = true;
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
-    {
         if(collision.gameObject.tag == "Out of Bounds")
         {
             GameStateManager.LoseALife(); //lose a life, reset level
@@ -107,6 +96,11 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        grounded = false;
     }
 
     public void AugmentSpeed(float spBoost)
