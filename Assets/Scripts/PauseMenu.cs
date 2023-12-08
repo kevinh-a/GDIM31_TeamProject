@@ -51,14 +51,16 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        //Resumes time, and heads back to the main menu
+        //Saves game, resumes time, and heads back to the main menu
+        GameStateManager.SaveGame();
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainestMenu");
     }
 
     public void PauseQuit()
     {
-        //Quits the application
+        //Saves game, then quits the application
+        GameStateManager.SaveGame();
         Application.Quit();
     }
 }

@@ -111,4 +111,10 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 1f;
         AudioManager.PlayMusic(_instance.gameMusic);
     }
+
+    public static void SaveGame()
+    {
+        string active_Level = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("SavedLevel", active_Level);
+    }
 }

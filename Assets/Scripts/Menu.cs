@@ -14,6 +14,15 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Level_1");
         GameStateManager.SetLives(3);
     }
+    
+    public void ContinueButton()
+    {
+        if(PlayerPrefs.HasKey("SavedLevel"))
+        {
+            string load_Level = PlayerPrefs.GetString("SavedLevel");
+            SceneManager.LoadScene(load_Level);
+        }
+    }
 
     // Update is called once per frame
     public void Quit()
