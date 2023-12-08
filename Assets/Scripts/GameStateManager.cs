@@ -116,5 +116,6 @@ public class GameStateManager : MonoBehaviour
     {
         string active_Level = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("SavedLevel", active_Level);
+        PlayerPrefs.SetInt("SavedLives", GetLives());
     }
 }

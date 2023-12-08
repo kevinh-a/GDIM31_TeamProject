@@ -20,6 +20,7 @@ public class Menu : MonoBehaviour
         if(PlayerPrefs.HasKey("SavedLevel"))
         {
             string load_Level = PlayerPrefs.GetString("SavedLevel");
+            GameStateManager.SetLives(PlayerPrefs.GetInt("SavedLives"));
             SceneManager.LoadScene(load_Level);
         }
     }
