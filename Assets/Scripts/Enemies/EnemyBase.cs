@@ -65,6 +65,7 @@ public abstract class EnemyBase : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(deathParticles, transform.position, transform.rotation);
+            Destroy(gameObject);
             AudioManager.PlaySFX(deathSound);
             Destroy(gameObject);
         }
