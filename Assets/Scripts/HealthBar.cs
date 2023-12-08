@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
     //Updates the hp bar
     public void UpdateHealth()
     {
-        for(int i = 0; i < heartsSprites.Length; i++)
+        for (int i = 0; i < heartsSprites.Length; i++)
         {
             if( i < playCon.GetCurrentHealth())
             {
