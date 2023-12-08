@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip playMusic;
+
     // Credit to the background image
     // https://www.vecteezy.com/free-vector/ruined-city
     // This Menu Class will mostly consist of buttons for the main menu
-    public void PlayButton()
+    public void NewGameButton()
     {
         //Loads in the first level (for now)
+        AudioManager.PlayMusic(playMusic);
         SceneManager.LoadScene("Level_1");
         GameStateManager.SetLives(3);
     }
@@ -19,6 +23,7 @@ public class Menu : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("SavedLevel"))
         {
+            AudioManager.PlayMusic(playMusic);
             string load_Level = PlayerPrefs.GetString("SavedLevel");
             GameStateManager.SetLives(PlayerPrefs.GetInt("SavedLives"));
             SceneManager.LoadScene(load_Level);

@@ -535,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b65754f563741b58f8b59af411eeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playMusic: {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
 --- !u!1 &873530842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,8 +1186,8 @@ MonoBehaviour:
   starting_Lives: 3
   lossOfLife: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
   deathSound: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
-  gameMusic: {fileID: 8300000, guid: fb12718111f3a2d49a8a456c441e4f35, type: 3}
-  menuMusic: {fileID: 8300000, guid: fb12718111f3a2d49a8a456c441e4f35, type: 3}
+  gameMusic: {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
+  menuMusic: {fileID: 8300000, guid: 1555836638cd34283a3780a19b58d4c6, type: 3}
 --- !u!4 &1477722628
 Transform:
   m_ObjectHideFlags: 0
@@ -1404,7 +1405,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fb12718111f3a2d49a8a456c441e4f35, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1555836638cd34283a3780a19b58d4c6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.184
   m_Pitch: 1
