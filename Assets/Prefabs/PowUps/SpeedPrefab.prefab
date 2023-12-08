@@ -47,3 +47,5 @@ MonoBehaviour:
   PowUpPrefab: {fileID: 4792144047064851160, guid: 580774e246b0244c1a2de7b8ce5f1902, type: 3}
   speedBoost: 5
   duration: 10
+  BoostFX: {fileID: 8300000, guid: 6cf9c85b5a3b88c468b21b9d21250adf, type: 3}
+  playerCon: {fileID: 0}

@@ -27,6 +27,16 @@ public class PlayerController : MonoBehaviour
     //[SerializeField]
     //private Animator animator;
 
+    [SerializeField]
+    private AudioClip jumpSound;
+    [SerializeField]
+    private AudioClip walkingSound;
+    [SerializeField]
+    private AudioClip hurtSound;
+    [SerializeField]
+    private AudioClip healSound;
+
+
     private float horizontal;
     private bool grounded;
     private bool flipped;
@@ -53,6 +63,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Rotate(0, 180, 0);
                 flipped = true;
+                AudioManager.PlaySFX(walkingSound);
             }
         }
 
@@ -62,12 +73,14 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Rotate(0, 180, 0);
                 flipped = false;
+                AudioManager.PlaySFX(walkingSound);
             }
         }
 
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && grounded == true) //allows jump if player is on ground
         {
             body.velocity = new Vector2(body.velocity.x, boost);
+            AudioManager.PlaySFX(jumpSound);
         }
 
     }
@@ -131,6 +144,7 @@ public class PlayerController : MonoBehaviour
         {
             GameStateManager.LoseALife(); //lose a life, reset level
         }
+        AudioManager.PlaySFX(hurtSound);
         hp.UpdateHealth();
     }
 
@@ -144,6 +158,7 @@ public class PlayerController : MonoBehaviour
         {
             current_Health += health;
         }
+        AudioManager.PlaySFX(healSound);
         hp.UpdateHealth();
     }
 

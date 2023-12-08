@@ -14,6 +14,8 @@ public class SpeedPowUp : PowerUpBase
 
     private float startTime;
 
+    [SerializeField]
+    private AudioClip BoostFX;
     //Needed to prevent nullreferences
     private bool pickedUp = false;
 
@@ -27,6 +29,7 @@ public class SpeedPowUp : PowerUpBase
         playerCon = player;
         playerCon.AugmentSpeed(speedBoost);
         pickedUp = true;
+        AudioManager.PlaySFX(BoostFX);
     }
 
     private void Update()

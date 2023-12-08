@@ -14,6 +14,9 @@ public class JumpPowUp : PowerUpBase
 
     private float startTime;
 
+    [SerializeField]
+    private AudioClip BoostFX;
+
     //Needed in order to prevent nullreferences...
     private bool pickedUp = false;
 
@@ -29,6 +32,7 @@ public class JumpPowUp : PowerUpBase
         playerCon = player;
         playerCon.AugmentJump(jumpBoost);
         pickedUp = true;
+        AudioManager.PlaySFX(BoostFX);
     }
 
     private void Update()

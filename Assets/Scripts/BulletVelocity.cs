@@ -11,6 +11,9 @@ public class BulletVelocity : MonoBehaviour
     [SerializeField]
     private int bullet_Damage;
 
+    [SerializeField]
+    private AudioClip bullet_sound;
+     
     private Rigidbody2D rb;
 
     [SerializeField]
@@ -21,6 +24,7 @@ public class BulletVelocity : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
+        AudioManager.PlaySFX(bullet_sound);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

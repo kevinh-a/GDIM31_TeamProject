@@ -16,6 +16,9 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField]
     private GameObject deathParticles;
 
+    [SerializeField]
+    private AudioClip deathSound;
+
     protected Rigidbody2D rb;
     protected bool flipped;
 
@@ -62,6 +65,7 @@ public abstract class EnemyBase : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(deathParticles, transform.position, transform.rotation);
+            AudioManager.PlaySFX(deathSound);
             Destroy(gameObject);
         }
     }
