@@ -30,8 +30,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private AudioClip jumpSound;
     [SerializeField]
-    private AudioClip walkingSound;
-    [SerializeField]
     private AudioClip hurtSound;
     [SerializeField]
     private AudioClip healSound;
@@ -63,7 +61,6 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Rotate(0, 180, 0);
                 flipped = true;
-                AudioManager.PlaySFX(walkingSound);
             }
         }
 
@@ -73,7 +70,6 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Rotate(0, 180, 0);
                 flipped = false;
-                AudioManager.PlaySFX(walkingSound);
             }
         }
 
