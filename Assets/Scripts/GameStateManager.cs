@@ -27,15 +27,6 @@ public class GameStateManager : MonoBehaviour
 
     private static GameStateManager _instance;
 
-    enum GameState
-    {
-        Menu,
-        Playing,
-        Paused,
-        GameOver
-    }
-
-    private static GameState current_State;
     void Awake()
     {
 
@@ -60,7 +51,6 @@ public class GameStateManager : MonoBehaviour
 
     public static void NewGame()
     {
-        current_State = GameState.Playing;
         current_Lives = _instance.starting_Lives;
         if(_instance.Levels.Count > 0)
         {
@@ -73,7 +63,6 @@ public class GameStateManager : MonoBehaviour
     // Calls the gameover screen and freezes the moving assets in a scene
     public static void GameOver()
     {
-        current_State = GameState.GameOver;
         Time.timeScale = 0f;
         OnGameOver();
     }
