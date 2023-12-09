@@ -33,8 +33,13 @@ public class PlayerController : MonoBehaviour
     private AudioClip hurtSound;
     [SerializeField]
     private AudioClip healSound;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
 
-
+    private bool Is_Walking;
+    private bool Is_Idle;
     private float horizontal;
     private bool grounded;
     private bool flipped;
@@ -46,6 +51,8 @@ public class PlayerController : MonoBehaviour
         current_Health = starting_Health;
         grounded = true;
         flipped = false;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -78,13 +85,17 @@ public class PlayerController : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, boost);
             AudioManager.PlaySFX(jumpSound);
         }
-
+      //  if (horizontal != Vector2.(KeyCode.A) &&
+       // {
+         //   animator.SetFloat("Is_Moving", horizontal);
+       // }
     }
 
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, body.velocity.y);
-
+        
+      //  animator.SetFloat("Is_Walking", (horizontal));
         //animator.SetFloat("Is_Walking", Mathf.Abs(horizontal));
 
     }
