@@ -33,13 +33,8 @@ public class PlayerController : MonoBehaviour
     private AudioClip hurtSound;
     [SerializeField]
     private AudioClip healSound;
-    [SerializeField]
-    private Animator animator;
-    [SerializeField]
-    private SpriteRenderer spriteRenderer;
 
-    private bool Is_Walking;
-    private bool Is_Idle;
+
     private float horizontal;
     private bool grounded;
     private bool flipped;
@@ -89,8 +84,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, body.velocity.y);
-        
-        animator.SetFloat("Is_Walking", (horizontal));
+
         //animator.SetFloat("Is_Walking", Mathf.Abs(horizontal));
 
     }
