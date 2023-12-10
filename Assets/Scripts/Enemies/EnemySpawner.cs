@@ -46,6 +46,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject.Instantiate(enemyPrefabs[3], transform);
             }
+
+            timer = 0;
         }
     }
 }
