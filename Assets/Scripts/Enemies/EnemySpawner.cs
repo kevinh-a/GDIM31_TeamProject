@@ -27,15 +27,24 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            if (Random.Range(0, 10) < 9)
+            int randInt = Random.Range(0, 100);
+
+            //Breaking down enemy spawn percentages
+            if(randInt < 75)
             {
-                GameObject.Instantiate(enemyPrefabs[0], transform); //spawn common enemy
-                timer = 0; //reset our timer
+                GameObject.Instantiate(enemyPrefabs[0], transform);
+            }
+            else if(randInt >= 75 && randInt < 85)
+            {
+                GameObject.Instantiate(enemyPrefabs[1], transform);
+            }
+            else if (randInt >= 85 && randInt < 95)
+            {
+                GameObject.Instantiate(enemyPrefabs[2], transform);
             }
             else
             {
-                GameObject.Instantiate(enemyPrefabs[1], transform); //rare spawn elite/boss
-                timer = 0; //reset our timer
+                GameObject.Instantiate(enemyPrefabs[3], transform);
             }
         }
     }
