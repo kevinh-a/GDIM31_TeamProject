@@ -9,6 +9,7 @@ TagManager:
   - Out of Bounds
   - Bullet
   - Enemy
+  - Win
   layers:
   - Default
   - TransparentFX

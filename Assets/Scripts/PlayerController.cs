@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private HealthBar hp;
 
-    //[SerializeField]
-    //private Animator animator;
+    [SerializeField]
+    private GameObject winScreen;
 
     [SerializeField]
     private AudioClip jumpSound;
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         flipped = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -112,6 +113,12 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Finish")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        if(collision.gameObject.tag == "Win")
+        {
+            Time.timeScale = 0f;
+            winScreen.SetActive(true);
         }
     }
 
