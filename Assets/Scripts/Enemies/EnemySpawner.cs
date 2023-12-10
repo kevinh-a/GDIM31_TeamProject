@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject.Instantiate(enemyPrefabs[1], transform);
             }
-            else if (randInt >= 85 && randInt < 95) //10% chance to spawn ranged enemies
+            else if (randInt >= 85 && randInt < 95) //10% chance to spawn jumper enemies
             {
                 GameObject.Instantiate(enemyPrefabs[2], transform);
             }

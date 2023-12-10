@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2156601867643743793}
   - component: {fileID: 4565609963314593130}
   m_Layer: 0
-  m_Name: ranged
+  m_Name: jumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatMob : EnemyBase
+public class WalkingMob : EnemyBase
 {
     [SerializeField]
     private float enemy_MoveSpeed;

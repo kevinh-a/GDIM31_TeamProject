@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedMob : EnemyBase
+public class JumpingMob : EnemyBase
 {
     [SerializeField]
     private float enemy_JumpForce;
 
+    public Transform shootingPoint;
+
+    public GameObject enemyBullet;
+
     private bool grounded = false;
     public override void Movement()
     {
-        if(grounded == true)
+        if (grounded == true)
         {
             rb.velocity = new Vector2(0, enemy_JumpForce);
-            //rb.AddForce(Vector2.up * enemy_JumpForce);
         }
     }
 
