@@ -63,12 +63,15 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
 
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             if (flipped == false)
             {
                 transform.Rotate(0, 180, 0);
                 flipped = true;
+                animator.SetBool("Jump", true);
 
             }
         }
@@ -88,7 +91,11 @@ public class PlayerController : MonoBehaviour
             AudioManager.PlaySFX(jumpSound);
         }
 
-        animator.SetFloat("Player_Movement", horizontal);
+    }
+
+    void OnLanding()
+    {
+        animator.SetBool("Jump", false);
 
     }
 

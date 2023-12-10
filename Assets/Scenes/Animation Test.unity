@@ -506,7 +506,7 @@ Animator:
   m_GameObject: {fileID: 898772854}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8df45b5d0f5dd4049b8a5a8e8ad24ddd, type: 2}
+  m_Controller: {fileID: 9100000, guid: fbfc766cbde8b994885f09b078e43ea9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -602,6 +602,7 @@ MonoBehaviour:
   starting_Health: 0
   current_Health: 0
   hp: {fileID: 0}
+  winScreen: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   hurtSound: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
   healSound: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
@@ -722,7 +723,7 @@ Animator:
   m_GameObject: {fileID: 1271792152}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8df45b5d0f5dd4049b8a5a8e8ad24ddd, type: 2}
+  m_Controller: {fileID: 9100000, guid: fbfc766cbde8b994885f09b078e43ea9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -878,7 +879,7 @@ Animation:
   m_GameObject: {fileID: 1417700426}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 778f4cc0b4c01d247847f145b0fecd41, type: 2}
+  m_Animation: {fileID: 7400000, guid: 93659bc779fd28a479ccb139cdd72b76, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -894,7 +895,7 @@ Animator:
   m_GameObject: {fileID: 1417700426}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a429b3fede6273e4fbddbb26f19a7eaa, type: 2}
+  m_Controller: {fileID: 9100000, guid: fbfc766cbde8b994885f09b078e43ea9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -937,6 +938,7 @@ MonoBehaviour:
   starting_Health: 5
   current_Health: 5
   hp: {fileID: 0}
+  winScreen: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   hurtSound: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
   healSound: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
