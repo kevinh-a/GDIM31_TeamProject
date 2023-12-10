@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Rotate(0, 180, 0);
                 flipped = true;
+
             }
         }
 
@@ -85,18 +86,14 @@ public class PlayerController : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, boost);
             AudioManager.PlaySFX(jumpSound);
         }
-      //  if (horizontal != Vector2.(KeyCode.A) &&
-       // {
-         //   animator.SetFloat("Is_Moving", horizontal);
-       // }
+
+        animator.SetFloat("Player_Movement", horizontal);
+
     }
 
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * speed, body.velocity.y);
-        
-      //  animator.SetFloat("Is_Walking", (horizontal));
-        //animator.SetFloat("Is_Walking", Mathf.Abs(horizontal));
 
     }
 
