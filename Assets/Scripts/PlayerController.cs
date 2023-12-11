@@ -38,8 +38,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private SpriteRenderer spriteRenderer;
     
-    private bool Is_Walking;
-    private bool Is_Idle;
     private float horizontal;
     private bool grounded;
     private bool flipped;
@@ -63,7 +61,14 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontal)); // Animation occurs if the following are pressed
+        if(Mathf.Abs(horizontal) > 0f)
+        {
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) //Allows player to move to the left with A
         {
@@ -88,15 +93,8 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, boost);
             AudioManager.PlaySFX(jumpSound);
-            animator.SetBool("Jump", true);
 
         }
-
-    }
-
-    public void OnLanding()
-    {
-        animator.SetBool("Jump", false);
 
     }
 
