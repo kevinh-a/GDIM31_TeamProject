@@ -14,6 +14,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private int starting_Lives; //How many lives the player has
 
+    [SerializeField]
     public static GameObject winScreen;
 
     [SerializeField]
@@ -48,6 +49,8 @@ public class GameStateManager : MonoBehaviour
 
         //Plays the menu music
         AudioManager.PlayMusic(menuMusic);
+
+        winScreen.SetActive(false);
         current_Lives = _instance.starting_Lives;
     }
 
