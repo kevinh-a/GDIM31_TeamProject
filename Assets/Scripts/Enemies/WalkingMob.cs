@@ -5,11 +5,11 @@ using UnityEngine;
 public class WalkingMob : EnemyBase
 {
     [SerializeField]
-    private float enemy_MoveSpeed;
+    private float enemy_MoveSpeed; //speed of the walking enemies
 
     public override void Movement()
     {
-        if (flipped == false)
+        if (flipped == false)   //works with the EnemyBase's collision for walls
         {
             MoveLeft();
         }

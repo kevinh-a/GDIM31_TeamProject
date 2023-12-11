@@ -5,12 +5,12 @@ using UnityEngine;
 public class JumpingMob : EnemyBase
 {
     [SerializeField]
-    private float enemy_JumpForce;
+    private float enemy_JumpForce;  //jump power
 
     private bool grounded = false;
-    public override void Movement()
+    public override void Movement() 
     {
-        if (grounded == true)
+        if (grounded == true)   //Make the mob jump once it's touching the ground
         {
             rb.velocity = new Vector2(0, enemy_JumpForce);
         }

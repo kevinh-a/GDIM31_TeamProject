@@ -5,16 +5,16 @@ using UnityEngine;
 public abstract class EnemyBase : MonoBehaviour
 {
     [SerializeField]
-    protected int damage;
+    protected int damage; //damage dealt by enemies
 
     [SerializeField]
-    protected int health;
+    protected int health; //enemy health
 
     [SerializeField]
-    protected float despawnTimer;
+    protected float despawnTimer;   //time for enemies to despawn
 
     [SerializeField]
-    private GameObject deathParticles;
+    private GameObject deathParticles; 
 
     [SerializeField]
     private AudioClip deathSound;
@@ -34,24 +34,24 @@ public abstract class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        Movement(); //calls each respective enemy's movement
 
         timer += Time.deltaTime;
-        if (timer >= despawnTimer)
+        if (timer >= despawnTimer)  //destroy when it reaches a certain time to prevent cluttering
         {
-            Destroy(gameObject);
+            Destroy(gameObject);    
         }
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform")
+        if (collision.gameObject.tag == "Platform") //some walls are tagged Platform, so flip directions when it runs into that
         {
             transform.Rotate(0, 180, 0);
             flipped = !flipped;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player") //Deal damage to players when they collide, and then disappear
         {
             //if collides with a player, take damage, but just despawn for now
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
@@ -59,9 +59,10 @@ public abstract class EnemyBase : MonoBehaviour
             player.Take_Damage(damage);
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage) 
     {
-        health -= damage;
+        health -= damage;   //Keeping track of health
+
         //When an enemy has 0 hp, they die
         if (health <= 0)
         {
@@ -71,5 +72,5 @@ public abstract class EnemyBase : MonoBehaviour
         }
     }
 
-    public abstract void Movement();
+    public abstract void Movement();  //for inheriting classes
 }
