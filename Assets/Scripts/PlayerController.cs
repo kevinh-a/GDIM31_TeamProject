@@ -10,13 +10,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
 
     [SerializeField]
-    private float speed; 
+    private float speed; //Player's speed
 
     [SerializeField]
-    private float boost;
+    private float boost; //Jump force
 
     [SerializeField]
-    private int bulletDmg;
+    private int bulletDmg; //Dmg from each bullet
 
     [SerializeField]
     private int starting_Health; //determine starting health
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private HealthBar hp;
 
+    //All audioclips used for the player's movements/actions
     [SerializeField]
     private AudioClip jumpSound;
     [SerializeField]
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Detects when the player is off the ground, so jumping is disabled
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Platform")
@@ -134,31 +136,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Changes the player's speed
     public void AugmentSpeed(float spBoost)
     {
         speed += spBoost;
     }
 
+    //Changes the player's jumpforce
     public void AugmentJump(float jmBoost)
     {
         boost += jmBoost;
     }
 
+    //Changes the bullet damage
     public void AugmentDmg(int dmgBoost)
     {
         bulletDmg += dmgBoost;
     }
 
+    //Returns bullet damage
     public int GetBulletDmg()
     {
         return bulletDmg;
     }
 
+    //Returns starting health
     public int GetStartingHealth()
     {
         return starting_Health;
     }
 
+    //Returns current health
     public int GetCurrentHealth()
     {
         return current_Health;
@@ -178,6 +186,7 @@ public class PlayerController : MonoBehaviour
 
     public void AddHealth(int health)
     {
+        //No more than max hp
         if (current_Health + health > starting_Health)
         {
             current_Health = starting_Health;
@@ -186,6 +195,7 @@ public class PlayerController : MonoBehaviour
         {
             current_Health += health;
         }
+        //Plays the heal SFX, and updates the UI health bar
         AudioManager.PlaySFX(healSound);
         hp.UpdateHealth();
     }
