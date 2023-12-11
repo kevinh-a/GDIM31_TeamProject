@@ -215,8 +215,7 @@ MonoBehaviour:
   starting_Health: 5
   current_Health: 5
   hp: {fileID: 0}
-  winScreen: {fileID: 0}
-  jumpSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  jumpSound: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   hurtSound: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
   healSound: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   animator: {fileID: 0}
