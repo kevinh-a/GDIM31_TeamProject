@@ -9,9 +9,6 @@ public class BulletVelocity : MonoBehaviour
     private float speed;
 
     [SerializeField]
-    private int bullet_Damage;
-
-    [SerializeField]
     private AudioClip bullet_sound;
      
     private Rigidbody2D rb;
@@ -20,11 +17,19 @@ public class BulletVelocity : MonoBehaviour
     private GameObject bulletParticles;
     public GameObject bulletPrefab;
 
+    private int bullet_Damage;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
         AudioManager.PlaySFX(bullet_sound);
+    }
+
+    //Called in the shooting class whenever a bullet is made
+    public void Init (int bulletdmg)
+    {
+        bullet_Damage = bulletdmg;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

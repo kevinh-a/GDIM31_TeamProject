@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     private float speed; 
 
     [SerializeField]
-    private float boost; 
+    private float boost;
+
+    [SerializeField]
+    private int bulletDmg;
 
     [SerializeField]
     private int starting_Health; //determine starting health
@@ -137,6 +140,16 @@ public class PlayerController : MonoBehaviour
     public void AugmentJump(float jmBoost)
     {
         boost += jmBoost;
+    }
+
+    public void AugmentDmg(int dmgBoost)
+    {
+        bulletDmg += dmgBoost;
+    }
+
+    public int GetBulletDmg()
+    {
+        return bulletDmg;
     }
 
     public int GetStartingHealth()

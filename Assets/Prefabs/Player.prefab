@@ -212,6 +212,7 @@ MonoBehaviour:
   body: {fileID: 0}
   speed: 7
   boost: 10
+  bulletDmg: 5
   starting_Health: 5
   current_Health: 5
   hp: {fileID: 0}
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2111582648858098625}
   bulletPrefab: {fileID: 4028605830357938589, guid: 0441b4ca006dac14e86472b656f1bbfd, type: 3}
+  playerCon: {fileID: 8441932378625418352}
 --- !u!61 &2122242485061347889
 BoxCollider2D:
   m_ObjectHideFlags: 0
