@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
-
+    
     private bool Is_Walking;
     private bool Is_Idle;
     private float horizontal;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnLanding()
+    public void OnLanding()
     {
         animator.SetBool("Jump", false);
 
