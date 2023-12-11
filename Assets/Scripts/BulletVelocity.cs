@@ -12,10 +12,9 @@ public class BulletVelocity : MonoBehaviour
     private AudioClip bullet_sound;
      
     private Rigidbody2D rb;
-
+   
     [SerializeField]
-    private GameObject bulletParticles;
-    public GameObject bulletPrefab;
+    private GameObject bulletPrefab;
 
     private int bullet_Damage;
 
@@ -29,6 +28,7 @@ public class BulletVelocity : MonoBehaviour
     //Called in the shooting class whenever a bullet is made
     public void Init (int bulletdmg)
     {
+        //Sets the bullet's damage
         bullet_Damage = bulletdmg;
     }
 
@@ -40,7 +40,7 @@ public class BulletVelocity : MonoBehaviour
         {
             enemy.TakeDamage(bullet_Damage);
         }
-        //Instantiate(bulletParticles, transform.position, transform.rotation);
+        //Destroys the bullet after collision
         Destroy(gameObject);
 
     }

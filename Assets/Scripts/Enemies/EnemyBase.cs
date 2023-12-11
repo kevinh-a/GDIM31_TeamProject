@@ -62,10 +62,10 @@ public abstract class EnemyBase : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        //When an enemy has 0 hp, they die
         if (health <= 0)
         {
             Instantiate(deathParticles, transform.position, transform.rotation);
-            Destroy(gameObject);
             AudioManager.PlaySFX(deathSound);
             Destroy(gameObject);
         }

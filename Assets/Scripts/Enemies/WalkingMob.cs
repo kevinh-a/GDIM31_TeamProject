@@ -6,6 +6,7 @@ public class WalkingMob : EnemyBase
 {
     [SerializeField]
     private float enemy_MoveSpeed;
+
     public override void Movement()
     {
         if (flipped == false)
@@ -18,11 +19,13 @@ public class WalkingMob : EnemyBase
         }
     }
 
+    //Moves to the left
     private void MoveLeft()
     {
         transform.position += new Vector3(-enemy_MoveSpeed * Time.deltaTime, 0f, 0f); //make enemies move left
     }
 
+    //Moves to the right
     private void MoveRight()
     {
         transform.position += new Vector3(enemy_MoveSpeed * Time.deltaTime, 0f, 0f); //make enemies move right
