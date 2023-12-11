@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
     private float horizontal;
+    [SerializeField]
     private bool grounded;
     private bool flipped;
 
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         current_Health = starting_Health;
-        grounded = true;
+        grounded = false;
         flipped = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
