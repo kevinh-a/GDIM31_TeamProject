@@ -122,7 +122,6 @@ public class PlayerController : MonoBehaviour
 
         if(collision.gameObject.tag == "Win")
         {
-            Time.timeScale = 0f;
             GameStateManager.Win();
         }
     }

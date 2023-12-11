@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
+    public void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     //Heads back to the main menu, and hides the win screen
     public void BackToMenu()
     {
         SceneManager.LoadScene("MainestMenu");
-        GameStateManager.winScreen.SetActive(false);
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
 }

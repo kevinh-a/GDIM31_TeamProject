@@ -15,7 +15,7 @@ public class GameStateManager : MonoBehaviour
     private int starting_Lives; //How many lives the player has
 
     [SerializeField]
-    public static GameObject winScreen;
+    public GameObject winScreen;
 
     [SerializeField]
     private AudioClip lossOfLife;
@@ -50,7 +50,6 @@ public class GameStateManager : MonoBehaviour
         //Plays the menu music
         AudioManager.PlayMusic(menuMusic);
 
-        winScreen.SetActive(false);
         current_Lives = _instance.starting_Lives;
     }
 
@@ -119,6 +118,7 @@ public class GameStateManager : MonoBehaviour
     public static void Win()
     {
         //Shows the winning screen when this method is triggered
-        winScreen.SetActive(true);
+        _instance.winScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
