@@ -14,6 +14,8 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private int starting_Lives; //How many lives the player has
 
+    public static GameObject winScreen;
+
     [SerializeField]
     private AudioClip lossOfLife;
     [SerializeField]
@@ -73,6 +75,7 @@ public class GameStateManager : MonoBehaviour
         return current_Lives;
     }
 
+    //Called when a player loses a life
     public static void LoseALife()
     {
         current_Lives--;
@@ -89,6 +92,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    //Called when the amount of lives needs to be changed
     public static void SetLives(int lives)
     {
         current_Lives = lives;
@@ -103,8 +107,15 @@ public class GameStateManager : MonoBehaviour
 
     public static void SaveGame()
     {
+        //Saves the current level and amount of lives
         string active_Level = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("SavedLevel", active_Level);
         PlayerPrefs.SetInt("SavedLives", GetLives());
+    }
+
+    public static void Win()
+    {
+        //Shows the winning screen when this method is triggered
+        winScreen.SetActive(true);
     }
 }

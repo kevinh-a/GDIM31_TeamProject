@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour
     private HealthBar hp;
 
     [SerializeField]
-    private GameObject winScreen;
-
-    [SerializeField]
     private AudioClip jumpSound;
     [SerializeField]
     private AudioClip hurtSound;
@@ -51,7 +48,6 @@ public class PlayerController : MonoBehaviour
         flipped = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -124,7 +120,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Win")
         {
             Time.timeScale = 0f;
-            winScreen.SetActive(true);
+            GameStateManager.Win();
         }
     }
 
