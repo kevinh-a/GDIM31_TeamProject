@@ -13,10 +13,11 @@ public class Menu : MonoBehaviour
     // This Menu Class will mostly consist of buttons for the main menu
     public void NewGameButton()
     {
-        //Loads in the first level (for now)
+        //Loads in the first leves and sets up the new game
         AudioManager.PlayMusic(playMusic);
         SceneManager.LoadScene("Level_1");
         GameStateManager.SetLives(3);
+        PlayerPrefs.SetString("SavedLevel", "Level_1");
     }
     
     public void ContinueButton()
