@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
     private float horizontal;
-    [SerializeField]
     private bool grounded;
     private bool flipped;
 
@@ -95,7 +94,6 @@ public class PlayerController : MonoBehaviour
             AudioManager.PlaySFX(jumpSound);
 
         }
-
     }
 
     private void FixedUpdate()
@@ -130,7 +128,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        grounded = false;
+        if (collision.gameObject.tag == "Platform")
+        {
+            grounded = false;
+        }
     }
 
     public void AugmentSpeed(float spBoost)

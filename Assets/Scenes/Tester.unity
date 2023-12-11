@@ -280,6 +280,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7481518218550812015, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4846519329218700241, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5098641
+      objectReference: {fileID: 0}
+    - target: {fileID: -4846519329218700241, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.400305
+      objectReference: {fileID: 0}
+    - target: {fileID: -4846519329218700241, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.039612293
+      objectReference: {fileID: 0}
+    - target: {fileID: -4846519329218700241, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0866307
+      objectReference: {fileID: 0}
+    - target: {fileID: -3476602139526074152, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2156601867643743793, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: enemy_JumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565609963314593130, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3445054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565609963314593130, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.06602609
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565609963314593130, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.066271126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565609963314593130, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.80319375
+      objectReference: {fileID: 0}
     - target: {fileID: 7048930429383913154, guid: 73785117b57fea44cbaecbfa5038dd4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6
