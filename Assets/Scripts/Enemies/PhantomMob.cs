@@ -5,18 +5,16 @@ using UnityEngine;
 public class PhantomMob : EnemyBase
 {
     [SerializeField]
-    private float moveRate;
+    private float speed;
 
-    [SerializeField]
-    private float minX, maxX, minY, maxY;
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     public override void Movement()
     {
-        timer += Time.deltaTime;
-
-        if (timer > moveRate)
-        {
-            transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-            timer = 0;
-        }
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }

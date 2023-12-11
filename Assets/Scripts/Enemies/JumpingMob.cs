@@ -7,10 +7,6 @@ public class JumpingMob : EnemyBase
     [SerializeField]
     private float enemy_JumpForce;
 
-    public Transform shootingPoint;
-
-    public GameObject enemyBullet;
-
     private bool grounded = false;
     public override void Movement()
     {
