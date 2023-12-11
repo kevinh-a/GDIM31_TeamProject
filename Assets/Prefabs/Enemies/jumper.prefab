@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.043943882, y: 0}
+  m_Offset: {x: 0.031241119, y: -0.09103614}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.91211224, y: 1.2270436}
+  m_Size: {x: 1.5218426, y: 1.4091159}
   m_EdgeRadius: 0
 --- !u!212 &5535047160148846668
 SpriteRenderer:
@@ -179,9 +179,7 @@ MonoBehaviour:
   despawnTimer: 30
   deathParticles: {fileID: 7703859389372657568, guid: 37c2b25417b30bc47a38563f9d28ad19, type: 3}
   deathSound: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
-  enemy_JumpForce: 7
-  shootingPoint: {fileID: 0}
-  enemyBullet: {fileID: 0}
+  enemy_JumpForce: 100
 --- !u!61 &4565609963314593130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,7 +212,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.040281832, y: 0.05011876}
+  m_Offset: {x: 0.010642171, y: -0.79672897}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -225,7 +223,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6861119, y: 0.02271077}
+  m_Size: {x: 1.0756619, y: 0.031179428}
   m_EdgeRadius: 0
 --- !u!111 &-3476602139526074152
 Animation:
