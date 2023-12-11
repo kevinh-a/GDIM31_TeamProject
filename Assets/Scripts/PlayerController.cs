@@ -63,20 +63,19 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal"); //get horizontal input (A or D / left or right)
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        animator.SetFloat("Speed", Mathf.Abs(horizontal)); // Animation occurs if the following are pressed
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) //Allows player to move to the left with A
         {
             if (flipped == false)
             {
                 transform.Rotate(0, 180, 0);
                 flipped = true;
-                animator.SetBool("Jump", true);
 
             }
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) //Allows player to move to the right with D
         {
             if (flipped == true)
             {
@@ -89,6 +88,8 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, boost);
             AudioManager.PlaySFX(jumpSound);
+            animator.SetBool("Jump", true);
+
         }
 
     }
