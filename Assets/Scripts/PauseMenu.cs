@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseMenuObj;
+    [SerializeField]
+    private AudioClip mainMenuMusic;
 
     //Tells the game if the game is already paused
     private static bool gameIsPaused;
@@ -55,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         GameStateManager.SaveGame();
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainestMenu");
+        AudioManager.PlayMusic(mainMenuMusic);
     }
 
     public void PauseQuit()

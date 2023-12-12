@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip mainMenuMusic;
     void Awake()
     {
         gameObject.SetActive(false);
@@ -15,6 +17,7 @@ public class WinScreen : MonoBehaviour
     {
         SceneManager.LoadScene("MainestMenu");
         gameObject.SetActive(false);
+        AudioManager.PlayMusic(mainMenuMusic);
         Time.timeScale = 1f;
     }
 }
