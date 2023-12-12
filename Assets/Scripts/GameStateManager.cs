@@ -47,10 +47,13 @@ public class GameStateManager : MonoBehaviour
             }
         }
 
+        current_Lives = _instance.starting_Lives;
+    }
+
+    void Start()
+    {
         //Plays the menu music
         AudioManager.PlayMusic(menuMusic);
-
-        current_Lives = _instance.starting_Lives;
     }
 
     public static void NewGame()

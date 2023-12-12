@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-    public void Awake()
+    void Awake()
     {
         gameObject.SetActive(false);
     }
