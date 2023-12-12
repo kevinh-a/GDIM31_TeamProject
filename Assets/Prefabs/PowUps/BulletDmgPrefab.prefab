@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PowUpPrefab: {fileID: 730625506218162308, guid: 811ddc84dc61c42028109d4d506b9d01, type: 3}
   dmgBoost: 10
-  duration: 10
+  duration: 30
   BoostFX: {fileID: 8300000, guid: b0e62ed71b1538648b719821f4f63b4c, type: 3}
   playerCon: {fileID: 8441932378625418352, guid: 785b7ec0830d2914ba4398f545e5bffd, type: 3}
